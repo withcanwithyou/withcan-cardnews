@@ -215,6 +215,9 @@ const BIZ=[
 ];
 let sel=BIZ[3], cnt=3, cards=[], hpHtml="";
 
+// ── Google Apps Script 웹앱 URL을 여기에 붙여넣으세요 ──
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzR1MCD7n0i5QEYebvj4iT0zLRCu3Kcv0jHMX4Y8bOSS7E_M6O-TnOw7ZpSofTWhxLu/exec";
+
 function renderBiz(){
   ["domestic","overseas"].forEach(g=>{
     const el=document.getElementById(g+"-grid"); el.innerHTML="";
@@ -281,6 +284,28 @@ JSON 구조: slide(번호), role("썸네일"|"내용"|"마무리"|"요약"), hea
     const [d1,d2]=await Promise.all([r1.json(),r2.json()]);
     cards=JSON.parse((d1.content?.find(b=>b.type==="text")?.text||"[]").replace(/```json|```/g,"").trim());
     hpHtml=d2.content?.find(b=>b.type==="text")?.text||"";
+
+    // ── Google 스프레드시트에 기록 저장 ──
+    if(APPS_SCRIPT_URL && APPS_SCRIPT_URL !== "여기에_앱스스크립트_URL_붙여넣기"){
+      fetch(APPS_SCRIPT_URL, {
+        method:"POST",
+        mode:"no-cors",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          businessType: sel.lb,
+          businessName: biz,
+          orgName: org,
+          activityName: act,
+          date: date,
+          place: place,
+          participants: people,
+          cardCount: cnt+"장",
+          content: content,
+          notes: notes,
+        })
+      }).catch(()=>{}); // 저장 실패해도 생성기 동작에 영향 없음
+    }
+
     hide("loading"); renderResult(biz,org,act); show("result");
   }catch(e){
     hide("loading"); show("inputSection");
