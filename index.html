@@ -30,37 +30,30 @@ textarea{resize:vertical}
 .count-btn.on{background:#4A8B2A;border-color:#4A8B2A;color:#fff}
 .count-sub{font-size:10px;font-weight:400;margin-top:2px;opacity:.8}
 .gen-btn{width:100%;padding:14px;border-radius:10px;border:none;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:4px}
-/* 로딩 */
 #loading{display:none;text-align:center;padding:50px 20px}
 .dot-row{display:flex;justify-content:center;gap:6px;margin-top:16px}
 .dot{width:8px;height:8px;border-radius:50%;background:#4A8B2A;animation:bbounce 1.2s infinite}
 .dot:nth-child(2){animation-delay:.2s}
 .dot:nth-child(3){animation-delay:.4s}
-@keyframes bonce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
 @keyframes bbounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-/* 결과 */
 #result{display:none}
 .back-btn{padding:8px 16px;border-radius:8px;border:1.5px solid #e2e8f0;background:#fff;color:#475569;font-size:12px;cursor:pointer;font-weight:600;margin-bottom:12px;font-family:inherit}
 .tab-row{display:flex;background:#fff;border-radius:12px;padding:4px;margin-bottom:12px;box-shadow:0 1px 8px rgba(0,0,0,0.05)}
 .tab-btn{flex:1;padding:10px;border-radius:10px;border:none;background:transparent;color:#475569;font-weight:700;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
 .tab-btn.on{color:#fff}
-/* 카드 프리뷰 */
 .cards-area{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
 .style-label{font-size:11px;font-weight:700;color:#475569;margin-bottom:6px;display:flex;align-items:center;gap:5px}
 .style-badge-a{background:#f0f7eb;color:#2D6A18;border-radius:5px;padding:1px 7px;font-size:10px}
 .style-badge-b{background:#1a1a1a;color:#fff;border-radius:5px;padding:1px 7px;font-size:10px}
 .style-sub{font-size:10px;color:#94a3b8;margin-bottom:8px}
 .card-stack{display:flex;flex-direction:column;gap:8px;align-items:center}
-/* 분할형 카드 */
-.card-split{border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;width:100%;aspect-ratio:4/5;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.card-split{border-radius:10px;overflow:hidden;cursor:pointer;width:100%;aspect-ratio:4/5;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
 .split-photo{flex:0 0 62%;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid rgba(255,255,255,0.12)}
 .split-text{flex:0 0 38%;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between}
-/* 포스터형 카드 */
-.card-poster{border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;width:100%;aspect-ratio:4/5;position:relative;background:#666;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.card-poster{border-radius:10px;overflow:hidden;cursor:pointer;width:100%;aspect-ratio:4/5;position:relative;background:#666;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
 .slide-num{position:absolute;top:7px;right:7px;background:rgba(0,0,0,0.4);color:#fff;font-size:8px;padding:1px 5px;border-radius:20px;font-weight:700;z-index:3}
-/* 문구 박스 */
 .copy-btn{padding:7px 16px;border-radius:8px;border:none;color:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;white-space:nowrap}
-.prompt-box{background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:14px;font-size:12px;line-height:1.9;color:#334155;white-space:pre-wrap;max-height:280px;overflow-y:auto;cursor:pointer;word-break:break-all}
+.prompt-box{background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:14px;font-size:12px;line-height:1.9;color:#334155;white-space:pre-wrap;max-height:300px;overflow-y:auto;cursor:pointer;word-break:break-all}
 .area-hint{font-size:11px;color:#94a3b8;margin-top:6px}
 .palette-box{background:#f8fafc;border-radius:12px;padding:14px;margin-bottom:12px}
 .palette-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
@@ -70,8 +63,7 @@ textarea{resize:vertical}
 .chip-hex{font-size:11px;color:#334155;font-weight:700;font-family:monospace}
 .checklist{background:#f0f7eb;border-radius:10px;padding:14px;font-size:12px;color:#2D6A18;line-height:2}
 .slide-list{border-top:1px solid #e2e8f0;padding-top:14px;margin-top:4px}
-.slide-item{border-left:3px solid #e2e8f0;padding-left:12px;margin-bottom:12px;cursor:pointer}
-.slide-item.on{border-left-color:var(--pt)}
+.slide-item{border-left:3px solid #e2e8f0;padding-left:12px;margin-bottom:12px}
 .slide-meta{font-size:10px;color:#94a3b8}
 .slide-hl{font-weight:800;color:#1e293b;font-size:13px;margin-top:2px}
 .slide-body{color:#475569;font-size:11px;margin-top:3px;white-space:pre-line}
@@ -91,7 +83,6 @@ footer{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px;padding-bo
     <p>활동 정보 입력 → AI가 카드뉴스 문구 + 홈페이지 본문 동시 완성</p>
   </div>
 
-  <!-- 입력 -->
   <div id="inputSection">
     <div class="card">
       <div class="sec-title">1. 사업 선택</div>
@@ -128,7 +119,6 @@ footer{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px;padding-bo
     </div>
   </div>
 
-  <!-- 로딩 -->
   <div id="loading">
     <div style="font-size:32px;margin-bottom:12px">🌿</div>
     <div style="font-size:16px;font-weight:800;color:#2D6A18;margin-bottom:6px">생성 중입니다...</div>
@@ -136,7 +126,6 @@ footer{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px;padding-bo
     <div class="dot-row"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
   </div>
 
-  <!-- 결과 -->
   <div id="result">
     <button class="back-btn" onclick="goBack()">← 다시 입력</button>
     <button class="back-btn" style="margin-left:8px" onclick="generate()">↻ 재생성</button>
@@ -151,7 +140,7 @@ footer{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px;padding-bo
       <div class="cards-area">
         <div>
           <div class="style-label"><span class="style-badge-a">스타일 A</span> 영역 분리형</div>
-          <div class="style-sub">상단 사진 + 하단 텍스트 영역 분리</div>
+          <div class="style-sub">상단 사진 + 하단 텍스트 분리</div>
           <div class="card-stack" id="stack-a"></div>
         </div>
         <div>
@@ -160,7 +149,6 @@ footer{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px;padding-bo
           <div class="card-stack" id="stack-b"></div>
         </div>
       </div>
-
       <div class="slide-list" id="slide-list"></div>
 
       <div style="border-top:2px solid #f0f7eb;padding-top:16px;margin-top:8px">
@@ -171,8 +159,8 @@ footer{text-align:center;font-size:11px;color:#94a3b8;margin-top:24px;padding-bo
         </div>
         <div class="checklist">
           <div style="font-weight:700;margin-bottom:4px">📐 미리캔버스 제작 체크리스트</div>
-          <div>• 이미지 크기: <strong>1080 × 1350px</strong> (4:5 세로형)</div>
-          <div>• <strong>1080 × 1350px 배경투명 재단 로고</strong> 활용 (1장 하단 중앙)</div>
+          <div>• 썸네일: <strong>720 × 720px</strong> / 카드뉴스: <strong>844 × 1055px</strong></div>
+          <div>• 썸네일·카드뉴스용 <strong>재단 로고 PNG 파일</strong> 별도 전달</div>
           <div>• 폰트: <strong>프리텐다드</strong> 또는 <strong>노토산스 KR</strong> 중 1종만</div>
           <div>• 장당 텍스트 <strong>3줄 이내</strong> — 사진이 주인공!</div>
           <div>• 로고 변형·회전·색상 변경 금지</div>
@@ -213,7 +201,7 @@ const BIZ=[
   {g:"overseas",id:"humanitarian", lb:"인도적 지원사업",      m:"#CC0000",s:"#FFCCCC",p:"#FFFFFF"},
   {g:"overseas",id:"dev",          lb:"지역개발사업",         m:"#61A534",s:"#C8E6C9",p:"#F5C842"},
 ];
-let sel=BIZ[3], cnt=3, cards=[], hpHtml="";
+let sel=BIZ[3], cnt=3, cards=[], hpHtml="", currentTitle="";
 
 // ── Google Apps Script 웹앱 URL을 여기에 붙여넣으세요 ──
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzR1MCD7n0i5QEYebvj4iT0zLRCu3Kcv0jHMX4Y8bOSS7E_M6O-TnOw7ZpSofTWhxLu/exec";
@@ -238,9 +226,7 @@ function setCount(n){
   document.querySelectorAll(".count-btn").forEach((b,i)=>{
     const on=(i+1)===n;
     b.classList.toggle("on",on);
-    b.style.background=on?"#4A8B2A":"";
-    b.style.borderColor=on?"#4A8B2A":"";
-    b.style.color=on?"#fff":"";
+    b.style.background=on?"#4A8B2A":""; b.style.borderColor=on?"#4A8B2A":""; b.style.color=on?"#fff":"";
   });
 }
 
@@ -259,6 +245,9 @@ async function generate(){
   const place=v("f-place")||"미기재", people=v("f-people")||"미기재", notes=v("f-notes")||"없음";
   const layout=cnt===1?"1장: 전체 요약":cnt===2?"1장: 썸네일, 2장: 내용+성과":"1장: 썸네일, 2장: 핵심 내용, 3장: 마무리+재단 응원 문구";
 
+  // 게시 제목: 활동명 #기관명
+  const title=act+(org?" #"+org:"");
+
   hide("inputSection"); hide("result"); show("loading");
 
   const cardPrompt=`당신은 위드캔복지재단 홍보 담당자입니다.
@@ -269,44 +258,57 @@ JSON 구조: slide(번호), role("썸네일"|"내용"|"마무리"|"요약"), hea
 조건: 텍스트최소화, 숫자활용, 마지막장 재단응원문구, 사실중심. JSON배열만 반환.`;
 
   const hpPrompt=`아래 활동 내용을 위드캔복지재단 홈페이지 소식 게시용 본문으로 작성해줘.
-조건: 공식홈페이지 게시완성도/첫문장에 사업명·기관명·활동명·날짜포함/활동내용·성과 구체서술/특이사항 <strong>강조/해시태그10개/과장없이사실중심/HTML만출력
-출력형식:
+
+조건:
+- 복지재단 공식 홈페이지에 바로 게시할 수 있는 완성도로 작성
+- 첫 문장에 사업명·기관명·활동명·날짜를 자연스럽게 포함
+- 활동 내용을 구체적이고 생생하게 묘사 (어떤 공간에서, 누가, 무엇을, 어떻게 했는지 충분히 서술)
+- 참여 인원·장소·활동 방식 등 수치와 사실을 적극 활용
+- 참여자의 경험과 활동이 갖는 사회적 의미를 따뜻하고 진정성 있게 서술
+- 특이사항·참여자 반응은 <strong> 태그로 강조
+- 재단의 사업 방향성과 앞으로의 계획을 구체적으로 언급
+- 각 문단은 3~4문장으로 풍성하게 작성
+- 홍보성 과장 표현 없이 사실 중심
+- 마지막 문단 뒤에 관련 해시태그 10개 추가
+- 아래 HTML 형식으로만 출력 (설명·코드블록 없이 HTML만)
+
+출력 형식:
 <div style="text-align:center; font-size:16px; line-height:2; color:#333333;">
-<p>첫번째문단</p><p>두번째문단</p><p>세번째문단(<strong>강조</strong>)</p><p>네번째문단</p>
-<p style="margin-top:32px; font-size:14px; color:#888888;">#태그1 #태그2 ...</p></div>
-[사업명]:${biz}/[기관명]:${org}/[활동명]:${act}/[날짜]:${date}/[장소]:${place}/[참여인원]:${people}/[활동내용]:${content}/[특이사항]:${notes}`;
+<p>첫 번째 문단 (도입 — 사업명·기관명·활동명·날짜·장소를 자연스럽게 녹여 3문장 이상으로 상세히)</p>
+<p>두 번째 문단 (활동 내용 — 구체적인 진행 과정, 참여 방식, 현장 분위기 등 상세 서술 3~4문장)</p>
+<p>세 번째 문단 (<strong>특이사항·참여자 반응 강조</strong> — 참여자 소감, 성과, 인상 깊었던 장면 등 생생하게 3~4문장)</p>
+<p>네 번째 문단 (활동의 의미와 가치 — 참여자·지역사회에 미치는 긍정적 영향 3문장)</p>
+<p>다섯 번째 문단 (재단 방향·계획 — 앞으로의 지속적인 지원 의지와 구체적인 계획 3문장)</p>
+<p style="margin-top:32px; font-size:14px; color:#888888;">
+#해시태그1 #해시태그2 ...
+</p>
+</div>
+
+[사업명]: ${biz}
+[기관명]: ${org}
+[활동명]: ${act}
+[날짜]: ${date}
+[장소]: ${place}
+[참여인원]: ${people}
+[활동내용]: ${content}
+[특이사항 또는 참여자 반응]: ${notes}`;
 
   try{
     const [r1,r2]=await Promise.all([
-      fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:cardPrompt}]})}),
-      fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:hpPrompt}]})}),
+      fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1200,messages:[{role:"user",content:cardPrompt}]})}),
+      fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1500,messages:[{role:"user",content:hpPrompt}]})}),
     ]);
     const [d1,d2]=await Promise.all([r1.json(),r2.json()]);
     cards=JSON.parse((d1.content?.find(b=>b.type==="text")?.text||"[]").replace(/```json|```/g,"").trim());
     hpHtml=d2.content?.find(b=>b.type==="text")?.text||"";
 
-    // ── Google 스프레드시트에 기록 저장 ──
-    if(APPS_SCRIPT_URL && APPS_SCRIPT_URL !== "여기에_앱스스크립트_URL_붙여넣기"){
-      fetch(APPS_SCRIPT_URL, {
-        method:"POST",
-        mode:"no-cors",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({
-          businessType: sel.lb,
-          businessName: biz,
-          orgName: org,
-          activityName: act,
-          date: date,
-          place: place,
-          participants: people,
-          cardCount: cnt+"장",
-          content: content,
-          notes: notes,
-        })
-      }).catch(()=>{}); // 저장 실패해도 생성기 동작에 영향 없음
+    if(APPS_SCRIPT_URL&&APPS_SCRIPT_URL!=="여기에_앱스스크립트_URL_붙여넣기"){
+      fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({businessType:sel.lb,businessName:biz,orgName:org,activityName:act,date,place,participants:people,cardCount:cnt+"장",content,notes})
+      }).catch(()=>{});
     }
 
-    hide("loading"); renderResult(biz,org,act); show("result");
+    hide("loading"); renderResult(title); show("result");
   }catch(e){
     hide("loading"); show("inputSection");
     document.getElementById("err-msg").textContent="생성 중 오류가 발생했습니다. 다시 시도해주세요.";
@@ -314,32 +316,40 @@ JSON 구조: slide(번호), role("썸네일"|"내용"|"마무리"|"요약"), hea
   }
 }
 
-function renderResult(biz,org,act){
-  const title=[act,org].filter(Boolean).join(" — ");
+function renderResult(title){
+  currentTitle=title;
   document.getElementById("res-title").textContent=title;
-  document.getElementById("hp-title-box").innerHTML=`<strong style="color:#2D6A18">📌 게시 제목:</strong> ${title}`;
+
+  // 홈페이지 제목 + 복사 버튼
+  document.getElementById("hp-title-box").innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <div style="font-size:13px"><strong style="color:#2D6A18">📌 게시 제목:</strong>
+        <span style="color:#334155;font-weight:600;margin-left:4px">${title}</span>
+      </div>
+      <button id="title-copy-btn" onclick="copyTitle()"
+        style="padding:4px 12px;border-radius:6px;border:1px solid ${sel.m};background:#fff;color:${sel.m};font-size:11px;cursor:pointer;font-weight:700;flex-shrink:0;white-space:nowrap;font-family:inherit">
+        복사
+      </button>
+    </div>`;
+
   document.getElementById("hp-content").textContent=hpHtml;
   document.getElementById("hp-copy-btn").style.background=sel.m;
   document.getElementById("palette-title").textContent=`💡 ${sel.lb} 컬러 팔레트`;
   document.getElementById("palette-chips").innerHTML=
     [["메인",sel.m],["보조",sel.s],["포인트",sel.p]].map(([l,c])=>
       `<div class="chip-row"><span class="chip" style="background:${c}"></span><div><div class="chip-lbl">${l} 컬러</div><div class="chip-hex">${c}</div></div></div>`).join("");
-
-  // 탭 컬러
   document.getElementById("tab-card").style.background=sel.m;
   document.getElementById("tab-card").style.color="#fff";
 
-  // 카드 렌더
-  const sA=document.getElementById("stack-a"), sB=document.getElementById("stack-b");
-  const sl=document.getElementById("slide-list");
+  const sA=document.getElementById("stack-a"),sB=document.getElementById("stack-b"),sl=document.getElementById("slide-list");
   sA.innerHTML=""; sB.innerHTML=""; sl.innerHTML="";
 
   cards.forEach((c,i)=>{
     const isFirst=i===0, isLast=i===cards.length-1;
-    // ── 스타일 A ──
+
+    // 스타일 A
     const cA=document.createElement("div");
-    cA.className="card-split";
-    cA.style.background=sel.m;
+    cA.className="card-split"; cA.style.background=sel.m;
     cA.innerHTML=`
       <div class="split-photo" style="background:rgba(255,255,255,0.08)">
         <span style="color:rgba(255,255,255,0.25);font-size:12px">🖼 활동 사진</span>
@@ -354,22 +364,20 @@ function renderResult(biz,org,act){
       </div>`;
     sA.appendChild(cA);
 
-    // ── 스타일 B ──
+    // 스타일 B
     const cB=document.createElement("div");
     cB.className="card-poster";
-    const photoDiv=`<div style="position:absolute;inset:0;background:linear-gradient(135deg,#777 0%,#444 100%);display:flex;align-items:center;justify-content:center"><span style="color:rgba(255,255,255,0.18);font-size:12px">🖼 활동 사진</span></div>`;
-    const numBadge=`<span class="slide-num">${i+1}/${cards.length}</span>`;
+    const photo=`<div style="position:absolute;inset:0;background:linear-gradient(135deg,#777 0%,#444 100%);display:flex;align-items:center;justify-content:center"><span style="color:rgba(255,255,255,0.18);font-size:12px">🖼 활동 사진</span></div>`;
+    const num=`<span class="slide-num">${i+1}/${cards.length}</span>`;
 
     if(isFirst){
-      // 상단 텍스트 헤더 + 하단 사진
-      cB.style.background=sel.m;
-      cB.style.display="flex"; cB.style.flexDirection="column";
+      cB.style.background=sel.m; cB.style.display="flex"; cB.style.flexDirection="column";
       cB.innerHTML=`
         <div style="flex:0 0 40%;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:5px;position:relative">
           <div style="width:20px;height:2.5px;background:${sel.p};border-radius:2px"></div>
           <div style="color:#fff;font-size:12px;font-weight:800;line-height:1.35;word-break:keep-all">${c.headline}</div>
           ${c.body?`<div style="color:${sel.s};font-size:9px;line-height:1.6;white-space:pre-line">${c.body}</div>`:""}
-          ${numBadge}
+          ${num}
         </div>
         <div style="flex:0 0 60%;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;position:relative">
           <span style="color:rgba(255,255,255,0.2);font-size:12px">🖼 활동 사진</span>
@@ -378,31 +386,27 @@ function renderResult(biz,org,act){
           </div>
         </div>`;
     } else if(!isLast){
-      // 사진 전면 + 중앙 컬러 밴드
-      cB.innerHTML=`${photoDiv}
+      cB.innerHTML=`${photo}
         <div style="position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);background:${sel.m}dd;padding:10px 12px;text-align:center">
           <div style="color:#fff;font-size:12px;font-weight:800;line-height:1.35;word-break:keep-all;margin-bottom:2px">${c.headline}</div>
           ${c.body?`<div style="color:${sel.s};font-size:9px;line-height:1.6;white-space:pre-line">${c.body}</div>`:""}
         </div>
         <div style="position:absolute;top:0;bottom:0;left:0;width:4px;background:${sel.p}"></div>
-        ${numBadge}`;
+        ${num}`;
     } else {
-      // 사진 전면 + 상단 그라디언트
-      cB.innerHTML=`${photoDiv}
+      cB.innerHTML=`${photo}
         <div style="position:absolute;top:0;left:0;right:0;height:55%;background:linear-gradient(to bottom,${sel.m}f0 0%,${sel.m}00 100%)"></div>
         <div style="position:absolute;top:0;left:0;right:0;padding:12px 12px 0;z-index:2">
           <div style="color:#fff;font-size:12px;font-weight:800;line-height:1.35;word-break:keep-all;margin-bottom:3px">${c.headline}</div>
           ${c.body?`<div style="color:${sel.s};font-size:9px;line-height:1.6;white-space:pre-line">${c.body}</div>`:""}
         </div>
         <div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:${sel.p}"></div>
-        ${numBadge}`;
+        ${num}`;
     }
     sB.appendChild(cB);
 
-    // 슬라이드 문구
     const item=document.createElement("div");
     item.className="slide-item";
-    item.style.setProperty("--pt",sel.p);
     item.innerHTML=`<div class="slide-meta">${i+1}장 · ${c.role}</div>
       <div class="slide-hl">${c.headline}</div>
       ${c.body?`<div class="slide-body">${c.body}</div>`:""}`;
@@ -410,9 +414,7 @@ function renderResult(biz,org,act){
   });
 }
 
-function goBack(){
-  hide("result"); show("inputSection"); window.scrollTo(0,0);
-}
+function goBack(){hide("result");show("inputSection");window.scrollTo(0,0);}
 
 function switchTab(t){
   const isCard=t==="card";
@@ -426,19 +428,29 @@ function switchTab(t){
   });
 }
 
+function copyTitle(){
+  const ta=document.createElement("textarea");
+  ta.value=currentTitle; ta.style.cssText="position:fixed;top:-9999px";
+  document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
+  const btn=document.getElementById("title-copy-btn");
+  if(btn){
+    btn.textContent="✅ 복사됨"; btn.style.background=sel.m; btn.style.color="#fff";
+    setTimeout(()=>{btn.textContent="복사"; btn.style.background="#fff"; btn.style.color=sel.m;},2000);
+  }
+}
+
 function copyHp(){
   const ta=document.createElement("textarea");
   ta.value=hpHtml; ta.style.cssText="position:fixed;top:-9999px";
-  document.body.appendChild(ta); ta.select(); document.execCommand("copy");
-  document.body.removeChild(ta);
+  document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
   const btn=document.getElementById("hp-copy-btn");
   btn.textContent="✅ 복사됨"; btn.style.background="#7AB648";
-  setTimeout(()=>{btn.textContent="📋 HTML 복사";btn.style.background=sel.m;},2500);
+  setTimeout(()=>{btn.textContent="📋 HTML 복사"; btn.style.background=sel.m;},2500);
 }
 
 function selectAll(el){
-  const range=document.createRange(); range.selectNodeContents(el);
-  const sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+  const r=document.createRange(); r.selectNodeContents(el);
+  const s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
 }
 
 renderBiz();
