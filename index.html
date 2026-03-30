@@ -204,7 +204,7 @@ const BIZ=[
 let sel=BIZ[3], cnt=3, cards=[], hpHtml="", currentTitle="";
 
 // ── Google Apps Script 웹앱 URL을 여기에 붙여넣으세요 ──
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzR1MCD7n0i5QEYebvj4iT0zLRCu3Kcv0jHMX4Y8bOSS7E_M6O-TnOw7ZpSofTWhxLu/exec";
+const APPS_SCRIPT_URL = "여기에_앱스스크립트_URL_붙여넣기";
 
 function renderBiz(){
   ["domestic","overseas"].forEach(g=>{
@@ -272,7 +272,16 @@ JSON 구조: slide(번호), role("썸네일"|"내용"|"마무리"|"요약"), hea
 - 마지막 문단 뒤에 관련 해시태그 10개 추가
 - 아래 HTML 형식으로만 출력 (설명·코드블록 없이 HTML만)
 
-출력 형식:
+출력 형식 (아래 구조를 반드시 지킬 것):
+
+<!-- 이미지 alt 텍스트 제안 (홈페이지 이미지 업로드 시 참고용) -->
+<!-- ※ 아래 주석은 에디터에 붙여넣기 후 화면에 보이지 않습니다 -->
+<!--
+[이미지 alt 텍스트 제안]
+1장 이미지: (활동명과 기관명을 포함한 15자 이내 설명. 예: "강북시니어클럽 케이터링 활동 대표사진")
+2장 이미지: (활동 핵심 장면을 담은 15자 이내 설명. 예: "어르신 20명 케이터링 서비스 제공 현장")
+3장 이미지: (마무리·결과 장면을 담은 15자 이내 설명. 예: "카페이든 케이터링 활동 마무리 단체사진")
+-->
 <div style="text-align:center; font-size:16px; line-height:2; color:#333333;">
 <p>첫 번째 문단 (도입 — 사업명·기관명·활동명·날짜·장소를 자연스럽게 녹여 3문장 이상으로 상세히)</p>
 <p>두 번째 문단 (활동 내용 — 구체적인 진행 과정, 참여 방식, 현장 분위기 등 상세 서술 3~4문장)</p>
