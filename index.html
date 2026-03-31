@@ -203,8 +203,8 @@ const BIZ=[
 ];
 let sel=BIZ[3], cnt=3, cards=[], hpHtml="", currentTitle="";
 
-// ── Google Apps Script 웹앱 URL을 여기에 붙여넣으세요 ──
-const APPS_SCRIPT_URL = "여기에_앱스스크립트_URL_붙여넣기";
+// ── Google Sheets 저장은 /api/save 를 통해 서버에서 처리 ──
+const SAVE_URL = "/api/save";
 
 function renderBiz(){
   ["domestic","overseas"].forEach(g=>{
@@ -274,13 +274,18 @@ JSON 구조: slide(번호), role("썸네일"|"내용"|"마무리"|"요약"), hea
 
 출력 형식 (아래 구조를 반드시 지킬 것):
 
-<!-- 이미지 alt 텍스트 제안 (홈페이지 이미지 업로드 시 참고용) -->
-<!-- ※ 아래 주석은 에디터에 붙여넣기 후 화면에 보이지 않습니다 -->
+<!-- ✅ 이미지 alt 텍스트 제안 -->
+<!-- 아래 img 태그를 이미지 업로드 후 src 경로만 실제 경로로 교체하세요 -->
+<!-- title과 alt 속성에 아래 설명을 그대로 사용하면 SEO에 효과적입니다 -->
 <!--
-[이미지 alt 텍스트 제안]
-1장 이미지: (활동명과 기관명을 포함한 15자 이내 설명. 예: "강북시니어클럽 케이터링 활동 대표사진")
-2장 이미지: (활동 핵심 장면을 담은 15자 이내 설명. 예: "어르신 20명 케이터링 서비스 제공 현장")
-3장 이미지: (마무리·결과 장면을 담은 15자 이내 설명. 예: "카페이든 케이터링 활동 마무리 단체사진")
+1장: <img src="업로드경로" title="(기관명+활동명 대표사진 설명 15자이내)" alt="(동일하게)">
+2장: <img src="업로드경로" title="(활동 핵심 장면 설명 15자이내)" alt="(동일하게)">
+3장: <img src="업로드경로" title="(마무리 장면 설명 15자이내)" alt="(동일하게)">
+
+예시:
+1장: <img src="/res/editor/파일명.png" title="강북시니어클럽 케이터링 활동 대표사진" alt="강북시니어클럽 케이터링 활동 대표사진">
+2장: <img src="/res/editor/파일명.png" title="어르신 20명 케이터링 서비스 제공 현장" alt="어르신 20명 케이터링 서비스 제공 현장">
+3장: <img src="/res/editor/파일명.png" title="카페이든 케이터링 활동 마무리 단체사진" alt="카페이든 케이터링 활동 마무리 단체사진">
 -->
 <div style="text-align:center; font-size:16px; line-height:2; color:#333333;">
 <p>첫 번째 문단 (도입 — 사업명·기관명·활동명·날짜·장소를 자연스럽게 녹여 3문장 이상으로 상세히)</p>
@@ -311,11 +316,21 @@ JSON 구조: slide(번호), role("썸네일"|"내용"|"마무리"|"요약"), hea
     cards=JSON.parse((d1.content?.find(b=>b.type==="text")?.text||"[]").replace(/```json|```/g,"").trim());
     hpHtml=d2.content?.find(b=>b.type==="text")?.text||"";
 
-    if(APPS_SCRIPT_URL&&APPS_SCRIPT_URL!=="여기에_앱스스크립트_URL_붙여넣기"){
-      fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({businessType:sel.lb,businessName:biz,orgName:org,activityName:act,date,place,participants:people,cardCount:cnt+"장",content,notes})
-      }).catch(()=>{});
-    }
+    // ── Google Sheets 저장 (/api/save 경유) ──
+    fetch(SAVE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        businessType: sel.lb,
+        businessName: biz,
+        orgName: org,
+        activityName: act,
+        date, place,
+        participants: people,
+        cardCount: cnt + "장",
+        content, notes,
+      })
+    }).catch(() => {});
 
     hide("loading"); renderResult(title); show("result");
   }catch(e){
